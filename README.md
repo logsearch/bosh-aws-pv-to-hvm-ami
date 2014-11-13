@@ -16,7 +16,7 @@ The whole process typically takes just under 3 minutes.
 
 ## Usage
 
-The `convert.sh` script requires four arguments:
+The `convert.sh` script requires four arguments (and the AWS_KEYPAIR_NAME env to be set):
 
  * the PV AMI (from `bosh stemcells`)
  * the correlating light-bosh stemcell (from `bosh public stemcells --full`)
@@ -25,11 +25,12 @@ The `convert.sh` script requires four arguments:
 
 Example:
 
-    ./convert.sh \
+    AWS_KEYPAIR_NAME=labs-commander ./convert.sh \
         ami-2f05c558 \
         https://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/aws/light-bosh-stemcell-2549-aws-xen-ubuntu-trusty-go_agent.tgz \
         ci-logsearch \
-        bosh-stemcell/aws/light-bosh-stemcell-2549-aws-xen-ubuntu-trusty-go_agent-hvm.tgz
+        bosh-stemcell/aws/light-bosh-stemcell-2549-aws-xen-ubuntu-trusty-go_agent-hvm.tgz 
+
 
 Notes:
 

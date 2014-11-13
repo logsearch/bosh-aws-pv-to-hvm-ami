@@ -243,5 +243,5 @@ rm -fr stemcell/
 
 
 echo "--> uploading stemcell to bosh..."
-
+echo "    bosh upload stemcell $RESULT_URL"
 bosh upload stemcell "$RESULT_URL"
